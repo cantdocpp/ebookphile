@@ -1,0 +1,16 @@
+@mixin center-navigation-container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+@mixin flex-vertical-align {
+  display: flex;
+  align-items: center;  
+}
+
+@mixin center-container {
+  margin: 0 auto;
+  width: 80%;
+  padding-top: 0;
+  margin-top: 10px;
+}

@@ -1,0 +1,34 @@
+.container {
+  @include center-container;
+
+  .heading-inner {
+    margin-top: 30vh;
+    height: 70vh;    
+
+    .main-heading-text {
+      font-size: calc(2em + 1vw);
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+  
+    .text-center {
+      text-align: center;
+    }
+
+    .heading-description {
+      margin-top: 2em
+    }
+
+    .action-button {
+      display: flex;
+      justify-content: center;
+      margin-top: 1em;
+
+      .buy-button {
+        background: white;
+        padding: 5px 12px;
+        border-radius: 4px;
+      }
+    }
+  }
+}
