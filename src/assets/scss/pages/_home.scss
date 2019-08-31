@@ -36,18 +36,11 @@
     position: relative;
 
     .section-2-header {
-      font-size: calc(20px + 1vw)
+      @include section-header;
     }
   
     .section-2-header::after {
-      content: '';
-      height: 3px;
-      background: black;
-      width: 50px;
-      position: absolute;
-      border-radius: 1px;
-      top: 15px;
-      margin-left: 10px;
+      @include horizontal-line;
     }
 
     .section-2-inner {
@@ -66,8 +59,7 @@
         }
 
         .image-container {
-          width: 120px;
-          margin: 0 auto;
+          @include image-container;
 
           .grid-image-title {
             text-align: center;
@@ -77,5 +69,109 @@
         }
       }
     }
+  }
+
+  .section-3 {
+    margin-top: 100px;
+
+    .section-3-container {
+      position: relative;
+
+      .section-3-header {
+        @include section-header;
+      }
+
+      .section-3-header::after {
+        @include horizontal-line;
+      }
+
+      .section-3-inner {
+        @include center-container;
+
+        .section-3-grid {
+          display: grid;
+          grid-template-columns: 250px 250px 250px;
+          grid-template-rows: auto; 
+          grid-column-gap: 50px;
+          grid-row-gap: 15px;
+          margin-top: 40px;
+
+          .item {
+            .image-container {
+              @include image-container;
+            }
+
+            .section-3-title {
+              text-align: center;
+              margin-top: 20px;
+              font-weight: 700;
+              font-size: 18px;
+            }
+
+            .section-3-description {
+              margin-top: 15px;
+              font-weight: 300;
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .faq-container {
+    margin-top: 10%;
+    position: relative;
+
+    .faq-header {
+      @include section-header;
+    }
+
+    .faq-inner {
+      margin-top: 20px;
+
+      .accordion {
+        margin-top: 10px;
+      }
+
+      .accordion-wrapper {
+        width: 100%;
+        border: 1px solid black;
+        cursor: pointer;
+        padding: 10px;
+        border-radius: 3px;
+
+        .accordion-inner {
+          margin-top: 15px;
+        }
+
+        .accordion-open {
+          transition: 0.2s ease-in-out !important;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .section-2-grid {
+    grid-template-columns: 100px 100px !important;
+    grid-column-gap: 100px !important;
+
+    .item-bottom {
+      margin-bottom: 0px !important;
+    }
+  }
+
+  .section-3-grid {
+    grid-template-columns: 100% !important;
+
+    .item {
+      margin-top: 30px !important;
+    }
+  }
+
+  .faq-header {
+    font-size: 20px !important;
   }
 }
